@@ -14,14 +14,13 @@ for i in range(1, 1026):
         "weight_kg": p["weight"] / 10,    # hektogram -> kg
         "type1": p["types"][0]["type"]["name"],
         "type2": p["types"][1]["type"]["name"] if len(p["types"]) > 1 else None,
-        **stats,
+        # **stats,
         "generation": romer[s["generation"]["name"].split("-")[1]],
-        "capture_rate": s["capture_rate"],
+        # "capture_rate": s["capture_rate"],
         "evolves_from_id": int(evo["url"].rstrip("/").split("/")[-1]) if evo else None,
-        "is_baby": s["is_baby"], 
-        "is_legendary": s["is_legendary"],
-        "is_mythical": s["is_mythical"],
-        "capture_rate": s["capture_rate"],
+        # "is_baby": s["is_baby"], 
+        # "is_legendary": s["is_legendary"],
+        # "is_mythical": s["is_mythical"],
     })
 
 pd.DataFrame(rows).to_csv("pokemon.csv", index=False)
